@@ -2,7 +2,7 @@
 
 Official website for Operation MetaMind, an independent research organization.
 
-**Live site:** [operationmetamind.eu.org](https://operationmetamind.eu.org)
+**Live site:** [operationmetamind.eu.org](https://operationmetamind.eu.org)  [Pending DNS approval]
 
 ## Stack
 
