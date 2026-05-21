@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Operation MetaMind — Independent research organization advancing computational sciences, data-driven discovery, and interdisciplinary research.">
+  <meta name="description" content="Operation MetaMind — Independent research organization specializing in Systematic Reviews & Meta-Analyses, clinical outcomes research, and evidence-based medicine.">
   <meta name="theme-color" content="#0f172a">
   <title>Operation MetaMind | Independent Research Organization</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f172a'/><text x='16' y='23' text-anchor='middle' font-family='system-ui' font-weight='700' font-size='20' fill='%2338bdf8'>M</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <meta property="og:title" content="Operation MetaMind">
-  <meta property="og:description" content="Independent research organization advancing computational sciences and data-driven discovery.">
+  <meta property="og:description" content="Independent research organization specializing in Systematic Reviews, Meta-Analyses, and evidence-based medicine.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://operationmetamind.eu.org">
 </head>
@@ -29,9 +30,10 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#methodology">Methodology</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#governance">Governance</a></li>
-        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -41,43 +43,49 @@
 
     <!-- Hero -->
     <section id="hero" class="hero">
+      <div class="hero-bg-shapes" aria-hidden="true">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
       <div class="container hero-content">
-        <p class="hero-overline">Independent Research Organization</p>
-        <h1>Operation <span class="accent">MetaMind</span></h1>
-        <p class="hero-tagline">Advancing computational sciences and data-driven discovery through rigorous, interdisciplinary research.</p>
-        <div class="hero-actions">
-          <a href="#research" class="btn btn-primary">Our Research</a>
+        <p class="hero-overline anim-fade-up">Independent Research Organization</p>
+        <h1 class="anim-fade-up anim-delay-1">Operation <span class="accent">MetaMind</span></h1>
+        <p class="hero-tagline anim-fade-up anim-delay-2">Advancing evidence-based medicine through rigorous Systematic Reviews, Meta-Analyses, and interdisciplinary clinical research.</p>
+        <div class="hero-actions anim-fade-up anim-delay-3">
+          <a href="#research" class="btn btn-primary">Explore Our Research</a>
           <a href="#contact" class="btn btn-outline">Collaborate With Us</a>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section scroll-reveal">
       <div class="container">
         <h2 class="section-title">About Our Organization</h2>
         <div class="about-grid">
           <div class="about-text">
-            <p>Operation MetaMind is an independent research organization dedicated to advancing knowledge at the intersection of computational science, data analytics, and domain-specific inquiry. Founded with the mission of conducting high-impact research outside traditional institutional boundaries, we bring together researchers committed to rigorous methodology and open science.</p>
-            <p>Our work spans multiple disciplines, leveraging large-scale datasets and modern analytical frameworks to address complex questions in health sciences, artificial intelligence, and computational biology. We maintain the highest standards of research ethics, data governance, and reproducibility in all our investigations.</p>
-            <p>As an independent organization, we collaborate with academic institutions, government agencies, and research consortia worldwide, contributing to the broader scientific community through publications, open-source tools, and data-sharing initiatives.</p>
+            <p>Operation MetaMind is an independent research organization dedicated to producing high-quality evidence syntheses in clinical and health sciences. Our core expertise lies in conducting Systematic Reviews and Meta-Analyses (SRMA) that follow PRISMA guidelines and Cochrane methodology, contributing to the global body of evidence-based medical knowledge.</p>
+            <p>We bring together physicians, medical researchers, and trainees across multiple institutions, united by a commitment to methodological rigor, transparent research practices, and open science. Our structured task force model enables efficient collaboration across all phases of the systematic review process.</p>
+            <p>As an independent organization, we maintain formal data use agreements, ethical oversight standards, and security protocols required for accessing restricted research databases from agencies including the National Cancer Institute (NCI), SEER Program, dbGaP, and other national repositories.</p>
           </div>
           <div class="about-stats">
             <div class="stat-card">
-              <span class="stat-number">&mdash;</span>
+              <span class="stat-number">11</span>
               <span class="stat-label">Active Researchers</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number">&mdash;</span>
-              <span class="stat-label">Research Projects</span>
+              <span class="stat-number">7</span>
+              <span class="stat-label">Task Forces</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number">&mdash;</span>
-              <span class="stat-label">Publications</span>
+              <span class="stat-number">6</span>
+              <span class="stat-label">SRMA Phases</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number">&mdash;</span>
-              <span class="stat-label">Collaborating Institutions</span>
+              <span class="stat-number">1</span>
+              <span class="stat-label">Active Project</span>
             </div>
           </div>
         </div>
@@ -85,118 +93,205 @@
     </section>
 
     <!-- Research Focus -->
-    <section id="research" class="section section-alt">
+    <section id="research" class="section section-alt scroll-reveal">
       <div class="container">
         <h2 class="section-title">Core Research Focus</h2>
-        <p class="section-subtitle">Our research program spans several interconnected domains, each contributing to our mission of data-driven scientific discovery.</p>
+        <p class="section-subtitle">Our research program integrates clinical inquiry with modern evidence synthesis methodologies to address critical questions in health sciences.</p>
         <div class="research-grid">
 
           <article class="research-card">
             <div class="research-icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
-                <path d="M14 24h20M24 14v20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 24h24M18 16h12M15 32h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.3"/>
               </svg>
             </div>
-            <h3>[Research Area 1]</h3>
-            <p>[Description of the first core research area. Explain the key questions being investigated and the methodological approach.]</p>
+            <h3>Systematic Reviews &amp; Meta-Analyses</h3>
+            <p>Our primary methodology: comprehensive evidence synthesis following PRISMA 2020 guidelines and Cochrane protocols. We conduct rigorous searches, transparent screening, and quantitative pooling of clinical evidence.</p>
           </article>
 
           <article class="research-card">
             <div class="research-icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M16 28l6-8 4 5 6-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 38V18l14-8 14 8v20" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M18 38V28h12v10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="24" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
               </svg>
             </div>
-            <h3>[Research Area 2]</h3>
-            <p>[Description of the second core research area. Explain the key questions being investigated and the methodological approach.]</p>
+            <h3>Clinical Outcomes Research</h3>
+            <p>Comparative effectiveness studies evaluating surgical techniques, treatment modalities, and clinical interventions. We focus on patient-centered outcomes including survival, morbidity, and quality of life.</p>
           </article>
 
           <article class="research-card">
             <div class="research-icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M24 8v32M16 16l8-8 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 36h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="18" cy="28" r="3" stroke="currentColor" stroke-width="2"/>
-                <circle cx="30" cy="28" r="3" stroke="currentColor" stroke-width="2"/>
+                <ellipse cx="24" cy="24" rx="16" ry="8" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 16v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 20l16 8M32 20l-16 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
               </svg>
             </div>
-            <h3>[Research Area 3]</h3>
-            <p>[Description of the third core research area. Explain the key questions being investigated and the methodological approach.]</p>
+            <h3>Esophageal Cancer Research</h3>
+            <p>Our inaugural project compares Robot-Assisted Minimally Invasive Esophagectomy (RAMIE) versus conventional Minimally Invasive Esophagectomy (MIE) through a comprehensive meta-analysis of clinical outcomes.</p>
           </article>
 
           <article class="research-card">
             <div class="research-icon">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="16" cy="20" r="4" stroke="currentColor" stroke-width="2"/>
-                <circle cx="32" cy="20" r="4" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="34" r="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M19 22l3 10M29 22l-3 10M18 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <rect x="10" y="10" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 28l5-6 4 4 7-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="16" cy="18" r="2" fill="currentColor" opacity="0.3"/>
               </svg>
             </div>
-            <h3>[Research Area 4]</h3>
-            <p>[Description of the fourth core research area. Explain the key questions being investigated and the methodological approach.]</p>
+            <h3>Computational Research Methods</h3>
+            <p>Leveraging modern statistical tools (R, RevMan, JASP) for quantitative synthesis, risk of bias assessment (RoB 2), and advanced analytical frameworks for heterogeneity analysis and sensitivity testing.</p>
           </article>
 
         </div>
       </div>
     </section>
 
+    <!-- SRMA Methodology Workflow -->
+    <section id="methodology" class="section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Our Methodology</h2>
+        <p class="section-subtitle">We follow a structured six-phase workflow for every systematic review, each managed by a dedicated task force.</p>
+        <div class="workflow">
+          <div class="workflow-step">
+            <div class="workflow-node">1</div>
+            <div class="workflow-label">Protocol<br><span>Design</span></div>
+          </div>
+          <div class="workflow-connector" aria-hidden="true"></div>
+          <div class="workflow-step">
+            <div class="workflow-node">2</div>
+            <div class="workflow-label">Literature<br><span>Search</span></div>
+          </div>
+          <div class="workflow-connector" aria-hidden="true"></div>
+          <div class="workflow-step">
+            <div class="workflow-node">3</div>
+            <div class="workflow-label">Screening &amp;<br><span>Eligibility</span></div>
+          </div>
+          <div class="workflow-connector" aria-hidden="true"></div>
+          <div class="workflow-step">
+            <div class="workflow-node">4</div>
+            <div class="workflow-label">Data<br><span>Extraction</span></div>
+          </div>
+          <div class="workflow-connector" aria-hidden="true"></div>
+          <div class="workflow-step">
+            <div class="workflow-node">5</div>
+            <div class="workflow-label">Analysis &amp;<br><span>Assessment</span></div>
+          </div>
+          <div class="workflow-connector" aria-hidden="true"></div>
+          <div class="workflow-step">
+            <div class="workflow-node">6</div>
+            <div class="workflow-label">Writing &amp;<br><span>Publication</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Team -->
-    <section id="team" class="section">
+    <section id="team" class="section section-alt scroll-reveal">
       <div class="container">
         <h2 class="section-title">Leadership &amp; Research Team</h2>
-        <p class="section-subtitle">Our team brings together experienced researchers with complementary expertise across computational and domain sciences.</p>
+        <p class="section-subtitle">Our multidisciplinary team of 11 researchers spans clinical medicine, data science, and research methodology.</p>
         <div class="team-grid">
 
-          <article class="team-card">
-            <div class="team-avatar" data-initials="PI">PI</div>
-            <h3>[Full Name]</h3>
+          <article class="team-card team-card-lead">
+            <div class="team-avatar" data-initials="AN">AN</div>
+            <h3>Dr Ayman Nadeem</h3>
+            <p class="team-degree">MBBS</p>
             <p class="team-role">Principal Investigator &amp; Director</p>
-            <p class="team-bio">[Brief professional biography. Include highest degree, areas of expertise, and prior institutional affiliations. This role satisfies the supervisor/mentor requirement for data access applications.]</p>
-            <div class="team-links">
-              <a href="#" aria-label="ORCID Profile">ORCID</a>
-              <a href="#" aria-label="Google Scholar Profile">Scholar</a>
-              <a href="#" aria-label="Email">Email</a>
-            </div>
+            <span class="team-badge">Commander</span>
+            <p class="team-bio">Founder and PI of Operation MetaMind. Oversees all task forces, sets strategic direction, and maintains methodological rigor across SRMA projects. Responsible for protocol design, cross-team coordination, and compliance.</p>
           </article>
 
           <article class="team-card">
-            <div class="team-avatar" data-initials="SR">SR</div>
-            <h3>[Full Name]</h3>
+            <div class="team-avatar" data-initials="AA">AA</div>
+            <h3>Dr Ahmed Aquib Ali</h3>
+            <p class="team-degree">MBBS</p>
             <p class="team-role">Senior Researcher</p>
-            <p class="team-bio">[Brief professional biography. Include highest degree, areas of expertise, and relevant research experience.]</p>
-            <div class="team-links">
-              <a href="#" aria-label="ORCID Profile">ORCID</a>
-              <a href="#" aria-label="Google Scholar Profile">Scholar</a>
-              <a href="#" aria-label="Email">Email</a>
-            </div>
+            <span class="team-badge">General</span>
+            <p class="team-bio">Senior research team member with expertise in clinical research methodology and evidence synthesis.</p>
           </article>
 
           <article class="team-card">
-            <div class="team-avatar" data-initials="RA">RA</div>
-            <h3>[Full Name]</h3>
-            <p class="team-role">Research Associate</p>
-            <p class="team-bio">[Brief professional biography. Include highest degree, areas of expertise, and relevant research experience.]</p>
-            <div class="team-links">
-              <a href="#" aria-label="ORCID Profile">ORCID</a>
-              <a href="#" aria-label="Google Scholar Profile">Scholar</a>
-              <a href="#" aria-label="Email">Email</a>
-            </div>
+            <div class="team-avatar" data-initials="MM">MM</div>
+            <h3>Dr Mohammed Merajuddin</h3>
+            <p class="team-degree">MBBS</p>
+            <p class="team-role">Senior Researcher</p>
+            <span class="team-badge">General</span>
+            <p class="team-bio">Senior research team member contributing to data analysis, quality assessment, and manuscript preparation.</p>
           </article>
 
           <article class="team-card">
-            <div class="team-avatar" data-initials="RA">RA</div>
-            <h3>[Full Name]</h3>
+            <div class="team-avatar" data-initials="KA">KA</div>
+            <h3>Dr Krishna Saketh Athmakuri</h3>
+            <p class="team-degree">MBBS</p>
             <p class="team-role">Research Associate</p>
-            <p class="team-bio">[Brief professional biography. Include highest degree, areas of expertise, and relevant research experience.]</p>
-            <div class="team-links">
-              <a href="#" aria-label="ORCID Profile">ORCID</a>
-              <a href="#" aria-label="Google Scholar Profile">Scholar</a>
-              <a href="#" aria-label="Email">Email</a>
-            </div>
+            <span class="team-badge">Officer</span>
+            <p class="team-bio">Research associate specializing in systematic search strategies and screening procedures.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar" data-initials="ST">ST</div>
+            <h3>Dr Sumaiya Tarannum Shaik</h3>
+            <p class="team-degree">MBBS</p>
+            <p class="team-role">Research Associate</p>
+            <span class="team-badge">Officer</span>
+            <p class="team-bio">Research associate contributing to data extraction, eligibility screening, and quality assessment.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar" data-initials="MN">MN</div>
+            <h3>Dr Manasi Narreddy</h3>
+            <p class="team-degree">MBBS</p>
+            <p class="team-role">Research Associate</p>
+            <span class="team-badge">Officer</span>
+            <p class="team-bio">Research associate engaged in literature search, screening, and evidence synthesis workflows.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar" data-initials="SG">SG</div>
+            <h3>Sravan Reddy Ganta</h3>
+            <p class="team-degree">MS4</p>
+            <p class="team-role">Research Associate</p>
+            <span class="team-badge">Officer</span>
+            <p class="team-bio">Fourth-year medical student contributing to data extraction and analytical components of ongoing studies.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar" data-initials="SB">SB</div>
+            <h3>Saieesh Bairam</h3>
+            <p class="team-degree">MS4</p>
+            <p class="team-role">Research Associate</p>
+            <span class="team-badge">Officer</span>
+            <p class="team-bio">Fourth-year medical student supporting screening, data extraction, and writing task forces.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar" data-initials="FS">FS</div>
+            <h3>Faizaan Mohammed Shareef</h3>
+            <p class="team-degree">MS3</p>
+            <p class="team-role">Research Assistant</p>
+            <span class="team-badge">Troop</span>
+            <p class="team-bio">Third-year medical student assisting with literature search and screening workflows.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar" data-initials="YA">YA</div>
+            <h3>Yousuf</h3>
+            <p class="team-role">Research Assistant</p>
+            <span class="team-badge">Troop</span>
+            <p class="team-bio">Research assistant supporting screening and data collection activities.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar" data-initials="MU">MU</div>
+            <h3>Mustafa</h3>
+            <p class="team-role">Research Assistant</p>
+            <span class="team-badge">Troop</span>
+            <p class="team-bio">Research assistant contributing to literature search and screening phases.</p>
           </article>
 
         </div>
@@ -204,7 +299,7 @@
     </section>
 
     <!-- Data Governance & Ethics -->
-    <section id="governance" class="section section-alt">
+    <section id="governance" class="section scroll-reveal">
       <div class="container">
         <h2 class="section-title">Data Governance &amp; Research Ethics</h2>
         <div class="governance-grid">
@@ -233,50 +328,26 @@
       </div>
     </section>
 
-    <!-- Publications & Projects -->
-    <section id="publications" class="section">
+    <!-- Projects -->
+    <section id="projects" class="section section-alt scroll-reveal">
       <div class="container">
-        <h2 class="section-title">Publications &amp; Projects</h2>
-        <p class="section-subtitle">Selected research outputs, preprints, and ongoing projects from our team.</p>
+        <h2 class="section-title">Active Projects</h2>
+        <p class="section-subtitle">Current and upcoming research initiatives from our team.</p>
         <div class="pub-list">
 
           <article class="pub-item">
-            <span class="pub-year">[Year]</span>
-            <div class="pub-details">
-              <h3>[Publication Title]</h3>
-              <p class="pub-authors">[Author 1, Author 2, Author 3]</p>
-              <p class="pub-venue">[Journal / Conference / Preprint Server]</p>
-              <div class="pub-links">
-                <a href="#">PDF</a>
-                <a href="#">arXiv</a>
-                <a href="#">Code</a>
+            <div class="pub-status-bar"></div>
+            <div class="pub-content">
+              <div class="pub-header">
+                <span class="pub-badge pub-badge-active">In Progress</span>
+                <span class="pub-year">2026</span>
               </div>
-            </div>
-          </article>
-
-          <article class="pub-item">
-            <span class="pub-year">[Year]</span>
-            <div class="pub-details">
-              <h3>[Publication Title]</h3>
-              <p class="pub-authors">[Author 1, Author 2]</p>
-              <p class="pub-venue">[Journal / Conference / Preprint Server]</p>
+              <h3>RAMIE vs MIE for Esophageal Cancer: A Systematic Review and Meta-Analysis</h3>
+              <p class="pub-authors">Nadeem A, Ali AA, Merajuddin M, Athmakuri KS, Shaik ST, Narreddy M, et al.</p>
+              <p class="pub-venue">Systematic Review &amp; Meta-Analysis (PROSPERO registration pending)</p>
+              <p class="pub-description">A comprehensive comparison of Robot-Assisted Minimally Invasive Esophagectomy (RAMIE) versus conventional Minimally Invasive Esophagectomy (MIE), evaluating surgical outcomes, perioperative morbidity, oncological adequacy, and long-term survival.</p>
               <div class="pub-links">
-                <a href="#">PDF</a>
-                <a href="#">arXiv</a>
-                <a href="#">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-item">
-            <span class="pub-year">[Year]</span>
-            <div class="pub-details">
-              <h3>[Publication Title]</h3>
-              <p class="pub-authors">[Author 1, Author 2, Author 3, Author 4]</p>
-              <p class="pub-venue">[Journal / Conference / Preprint Server]</p>
-              <div class="pub-links">
-                <a href="#">PDF</a>
-                <a href="#">Code</a>
+                <a href="https://github.com/Operation-MetaMind" target="_blank" rel="noopener noreferrer">Protocol</a>
               </div>
             </div>
           </article>
@@ -286,7 +357,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="section scroll-reveal">
       <div class="container">
         <h2 class="section-title">Contact</h2>
         <div class="contact-grid">
@@ -325,9 +396,19 @@
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <div class="footer-brand">
-        <span class="footer-logo">Operation<span class="accent">MetaMind</span></span>
-        <p>Independent Research Organization</p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">Operation<span class="accent">MetaMind</span></span>
+          <p>Independent Research Organization</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#team">Team</a>
+          <a href="#governance">Governance</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Operation MetaMind. All rights reserved.</p>
