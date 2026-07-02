@@ -2,8 +2,6 @@
 
 Official website for Operation MetaMind, an independent, physician-led research collective.
 
-**Live site:** [operationmetamind.eu.org](https://operationmetamind.eu.org) (pending DNS)
-
 ## Stack
 
 - Static HTML5 and CSS3 with vanilla JavaScript, no build step
