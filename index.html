@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Operation MetaMind — Independent research organization specializing in Systematic Reviews & Meta-Analyses, clinical outcomes research, and evidence-based medicine.">
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#0f1a17">
   <title>Operation MetaMind | Independent Research Organization</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f172a'/><text x='16' y='23' text-anchor='middle' font-family='system-ui' font-weight='700' font-size='20' fill='%2338bdf8'>M</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f1a17'/><text x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-weight='600' font-size='19' fill='%234cb8a6'>M</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <meta property="og:title" content="Operation MetaMind">
   <meta property="og:description" content="Independent research organization specializing in Systematic Reviews, Meta-Analyses, and evidence-based medicine.">
@@ -22,7 +22,7 @@
 
   <header class="site-header" role="banner">
     <nav class="nav-container" role="navigation" aria-label="Main navigation">
-      <a href="#" class="nav-logo">Operation<span class="accent">MetaMind</span></a>
+      <a href="#" class="nav-logo"><span class="nav-mark" aria-hidden="true">M</span>Operation&nbsp;<em>MetaMind</em></a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
       <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
         <span></span>
@@ -34,7 +34,7 @@
         <li><a href="#team">Team</a></li>
         <li><a href="#governance">Governance</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -43,19 +43,22 @@
 
     <!-- Hero -->
     <section id="hero" class="hero">
-      <div class="hero-bg-shapes" aria-hidden="true">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <canvas id="evidence-network" class="hero-canvas" aria-hidden="true"></canvas>
       <div class="container hero-content">
-        <p class="hero-overline anim-fade-up">Independent Research Organization</p>
-        <h1 class="anim-fade-up anim-delay-1">Operation <span class="accent">MetaMind</span></h1>
+        <p class="hero-overline anim-fade-up"><span class="rule" aria-hidden="true"></span>Independent Research Organization</p>
+        <h1 class="anim-fade-up anim-delay-1">Operation <em>MetaMind</em></h1>
         <p class="hero-tagline anim-fade-up anim-delay-2">Advancing evidence-based medicine through rigorous Systematic Reviews, Meta-Analyses, and interdisciplinary clinical research.</p>
         <div class="hero-actions anim-fade-up anim-delay-3">
           <a href="#research" class="btn btn-primary">Explore Our Research</a>
           <a href="#contact" class="btn btn-outline">Collaborate With Us</a>
+        </div>
+      </div>
+      <div class="hero-meta anim-fade-up anim-delay-3">
+        <div class="container hero-meta-inner">
+          <span>PRISMA 2020 Guidelines</span>
+          <span>Cochrane Methodology</span>
+          <span>Open&nbsp;Science &amp; Reproducibility</span>
         </div>
       </div>
     </section>
@@ -63,27 +66,30 @@
     <!-- About -->
     <section id="about" class="section scroll-reveal">
       <div class="container">
-        <h2 class="section-title">About Our Organization</h2>
+        <div class="section-head">
+          <span class="section-kicker">01 — About</span>
+          <h2 class="section-title">About Our Organization</h2>
+        </div>
         <div class="about-grid">
           <div class="about-text">
-            <p>Operation MetaMind is an independent research organization dedicated to producing high-quality evidence syntheses in clinical and health sciences. Our core expertise lies in conducting Systematic Reviews and Meta-Analyses (SRMA) that follow PRISMA guidelines and Cochrane methodology, contributing to the global body of evidence-based medical knowledge.</p>
+            <p class="lede">Operation MetaMind is an independent research organization dedicated to producing high-quality evidence syntheses in clinical and health sciences. Our core expertise lies in conducting Systematic Reviews and Meta-Analyses (SRMA) that follow PRISMA guidelines and Cochrane methodology, contributing to the global body of evidence-based medical knowledge.</p>
             <p>We bring together physicians, medical researchers, and trainees across multiple institutions, united by a commitment to methodological rigor, transparent research practices, and open science. Our structured task force model enables efficient collaboration across all phases of the systematic review process.</p>
             <p>As an independent organization, we maintain formal data use agreements, ethical oversight standards, and security protocols required for accessing restricted research databases from agencies including the National Cancer Institute (NCI), SEER Program, dbGaP, and other national repositories.</p>
           </div>
           <div class="about-stats">
-            <div class="stat-card">
+            <div class="stat">
               <span class="stat-number">11</span>
               <span class="stat-label">Active Researchers</span>
             </div>
-            <div class="stat-card">
+            <div class="stat">
               <span class="stat-number">7</span>
               <span class="stat-label">Task Forces</span>
             </div>
-            <div class="stat-card">
+            <div class="stat">
               <span class="stat-number">6</span>
               <span class="stat-label">SRMA Phases</span>
             </div>
-            <div class="stat-card">
+            <div class="stat">
               <span class="stat-number">1</span>
               <span class="stat-label">Active Project</span>
             </div>
@@ -95,16 +101,20 @@
     <!-- Research Focus -->
     <section id="research" class="section section-alt scroll-reveal">
       <div class="container">
-        <h2 class="section-title">Core Research Focus</h2>
-        <p class="section-subtitle">Our research program integrates clinical inquiry with modern evidence synthesis methodologies to address critical questions in health sciences.</p>
+        <div class="section-head">
+          <span class="section-kicker">02 — Research</span>
+          <h2 class="section-title">Core Research Focus</h2>
+          <p class="section-subtitle">Our research program integrates clinical inquiry with modern evidence synthesis methodologies to address critical questions in health sciences.</p>
+        </div>
         <div class="research-grid">
 
           <article class="research-card">
+            <span class="research-index" aria-hidden="true">01</span>
             <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M12 24h24M18 16h12M15 32h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.3"/>
+                <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.25"/>
               </svg>
             </div>
             <h3>Systematic Reviews &amp; Meta-Analyses</h3>
@@ -112,8 +122,9 @@
           </article>
 
           <article class="research-card">
+            <span class="research-index" aria-hidden="true">02</span>
             <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M10 38V18l14-8 14 8v20" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                 <path d="M18 38V28h12v10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                 <circle cx="24" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
@@ -124,8 +135,9 @@
           </article>
 
           <article class="research-card">
+            <span class="research-index" aria-hidden="true">03</span>
             <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <ellipse cx="24" cy="24" rx="16" ry="8" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M24 16v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 <path d="M16 20l16 8M32 20l-16 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
@@ -136,11 +148,12 @@
           </article>
 
           <article class="research-card">
+            <span class="research-index" aria-hidden="true">04</span>
             <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <rect x="10" y="10" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M16 28l5-6 4 4 7-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="16" cy="18" r="2" fill="currentColor" opacity="0.3"/>
+                <circle cx="16" cy="18" r="2" fill="currentColor" opacity="0.25"/>
               </svg>
             </div>
             <h3>Computational Research Methods</h3>
@@ -154,8 +167,11 @@
     <!-- SRMA Methodology Workflow -->
     <section id="methodology" class="section scroll-reveal">
       <div class="container">
-        <h2 class="section-title">Our Methodology</h2>
-        <p class="section-subtitle">We follow a structured six-phase workflow for every systematic review, each managed by a dedicated task force.</p>
+        <div class="section-head">
+          <span class="section-kicker">03 — Methodology</span>
+          <h2 class="section-title">Our Methodology</h2>
+          <p class="section-subtitle">We follow a structured six-phase workflow for every systematic review, each managed by a dedicated task force.</p>
+        </div>
         <div class="workflow">
           <div class="workflow-step">
             <div class="workflow-node">1</div>
@@ -193,8 +209,11 @@
     <!-- Team -->
     <section id="team" class="section section-alt scroll-reveal">
       <div class="container">
-        <h2 class="section-title">Leadership &amp; Research Team</h2>
-        <p class="section-subtitle">Our multidisciplinary team of 11 researchers spans clinical medicine, data science, and research methodology.</p>
+        <div class="section-head">
+          <span class="section-kicker">04 — Team</span>
+          <h2 class="section-title">Leadership &amp; Research Team</h2>
+          <p class="section-subtitle">Our multidisciplinary team of 11 researchers spans clinical medicine, data science, and research methodology.</p>
+        </div>
         <div class="team-grid">
 
           <article class="team-card team-card-lead">
@@ -202,7 +221,7 @@
             <h3>Dr Ayman Nadeem</h3>
             <p class="team-degree">MBBS</p>
             <p class="team-role">Principal Investigator &amp; Director</p>
-            <span class="team-badge">Commander</span>
+            <span class="team-badge team-badge-lead">Commander</span>
             <p class="team-bio">Founder and PI of Operation MetaMind. Oversees all task forces, sets strategic direction, and maintains methodological rigor across SRMA projects. Responsible for protocol design, cross-team coordination, and compliance.</p>
           </article>
 
@@ -299,9 +318,12 @@
     </section>
 
     <!-- Data Governance & Ethics -->
-    <section id="governance" class="section scroll-reveal">
+    <section id="governance" class="section section-dark scroll-reveal">
       <div class="container">
-        <h2 class="section-title">Data Governance &amp; Research Ethics</h2>
+        <div class="section-head">
+          <span class="section-kicker">05 — Governance</span>
+          <h2 class="section-title">Data Governance &amp; Research Ethics</h2>
+        </div>
         <div class="governance-grid">
           <div class="governance-text">
             <p>Operation MetaMind is committed to the highest standards of responsible research conduct and data stewardship. We adhere to all applicable data use agreements, institutional review requirements, and ethical guidelines governing the use of sensitive research data.</p>
@@ -329,14 +351,16 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section section-alt scroll-reveal">
+    <section id="projects" class="section scroll-reveal">
       <div class="container">
-        <h2 class="section-title">Active Projects</h2>
-        <p class="section-subtitle">Current and upcoming research initiatives from our team.</p>
+        <div class="section-head">
+          <span class="section-kicker">06 — Projects</span>
+          <h2 class="section-title">Active Projects</h2>
+          <p class="section-subtitle">Current and upcoming research initiatives from our team.</p>
+        </div>
         <div class="pub-list">
 
           <article class="pub-item">
-            <div class="pub-status-bar"></div>
             <div class="pub-content">
               <div class="pub-header">
                 <span class="pub-badge pub-badge-active">In Progress</span>
@@ -347,7 +371,7 @@
               <p class="pub-venue">Systematic Review &amp; Meta-Analysis (PROSPERO registration pending)</p>
               <p class="pub-description">A comprehensive comparison of Robot-Assisted Minimally Invasive Esophagectomy (RAMIE) versus conventional Minimally Invasive Esophagectomy (MIE), evaluating surgical outcomes, perioperative morbidity, oncological adequacy, and long-term survival.</p>
               <div class="pub-links">
-                <a href="https://github.com/Operation-MetaMind" target="_blank" rel="noopener noreferrer">Protocol</a>
+                <a href="https://github.com/Operation-MetaMind" target="_blank" rel="noopener noreferrer">Protocol&nbsp;&#8599;</a>
               </div>
             </div>
           </article>
@@ -357,9 +381,12 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section scroll-reveal">
+    <section id="contact" class="section section-alt scroll-reveal">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <div class="section-head">
+          <span class="section-kicker">07 — Contact</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
         <div class="contact-grid">
           <div class="contact-info">
             <h3>Get in Touch</h3>
@@ -398,7 +425,7 @@
     <div class="container footer-content">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="footer-logo">Operation<span class="accent">MetaMind</span></span>
+          <span class="footer-logo">Operation&nbsp;<em>MetaMind</em></span>
           <p>Independent Research Organization</p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
@@ -415,6 +442,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="hero-network.js" defer></script>
 
 </body>
 </html>
