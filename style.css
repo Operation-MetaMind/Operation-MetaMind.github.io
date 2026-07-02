@@ -290,10 +290,20 @@ em { font-style: italic; }
   mask-image: radial-gradient(ellipse 95% 105% at 55% 42%, black 30%, transparent 90%);
 }
 
+/* fixed side-gutter evidence field — accompanies the whole page.
+   Draws only outside the content column (in-canvas mask), never over text. */
+.margin-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 60; /* under the sticky header (100) and nav drawer (105) */
+  pointer-events: none;
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
   width: 100%;
+  text-align: center;
   padding-top: clamp(4rem, 10vw, 7rem);
   padding-bottom: clamp(3.5rem, 8vw, 6rem);
 }
@@ -301,6 +311,7 @@ em { font-style: italic; }
 .hero-overline {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   font-size: 0.78rem;
   font-weight: 600;
@@ -322,7 +333,7 @@ em { font-style: italic; }
   font-weight: 500;
   line-height: 1.04;
   letter-spacing: -0.02em;
-  margin-bottom: 1.75rem;
+  margin: 0 auto 1.75rem;
   max-width: 14ch;
 }
 .hero h1 em {
@@ -334,7 +345,7 @@ em { font-style: italic; }
   font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   color: var(--text);
   max-width: 56ch;
-  margin-bottom: 2.75rem;
+  margin: 0 auto 2.75rem;
   line-height: 1.7;
 }
 
@@ -342,6 +353,7 @@ em { font-style: italic; }
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-meta {
