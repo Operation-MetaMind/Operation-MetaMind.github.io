@@ -3,418 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Operation MetaMind — Independent research organization specializing in Systematic Reviews & Meta-Analyses, clinical outcomes research, and evidence-based medicine.">
-  <meta name="theme-color" content="#0f172a">
-  <title>Operation MetaMind | Independent Research Organization</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f172a'/><text x='16' y='23' text-anchor='middle' font-family='system-ui' font-weight='700' font-size='20' fill='%2338bdf8'>M</text></svg>">
+  <meta name="description" content="Operation MetaMind is an independent, physician-led research collective. We answer the questions medicine has not: systematic reviews, meta-analyses, database cohorts, and decision models.">
+  <meta name="theme-color" content="#f3f1ec">
+  <title>Operation MetaMind | Physician-led evidence synthesis</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2314151a'/><circle cx='16' cy='16' r='8' fill='none' stroke='%23c9b8ff' stroke-width='1.4'/><circle cx='16' cy='16' r='3' fill='%237c9cff'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
   <meta property="og:title" content="Operation MetaMind">
-  <meta property="og:description" content="Independent research organization specializing in Systematic Reviews, Meta-Analyses, and evidence-based medicine.">
+  <meta property="og:description" content="Physician-led evidence synthesis. Independent research collective.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://operationmetamind.eu.org">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#work" class="skip-link">Skip to content</a>
 
-  <header class="site-header" role="banner">
-    <nav class="nav-container" role="navigation" aria-label="Main navigation">
-      <a href="#" class="nav-logo">Operation<span class="accent">MetaMind</span></a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
-        <span></span>
-      </label>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#methodology">Methodology</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#governance">Governance</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Fixed WebGL stage, sits behind everything -->
+  <canvas class="scene" id="scene" aria-hidden="true"></canvas>
+  <div class="scene-fallback" id="sceneFallback" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        Operation MetaMind
+      </a>
+      <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+      <label for="navToggle" class="burger" aria-label="Toggle navigation"><span></span><span></span></label>
+      <nav class="nav" aria-label="Main">
+        <a href="#model">Model</a>
+        <a href="#build">Work</a>
+        <a href="#work">Projects</a>
+        <a href="#record">Collaboration</a>
+        <a href="#lead" class="nav-cta">Lead a project</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="main">
+  <main id="top">
 
-    <!-- Hero -->
-    <section id="hero" class="hero">
-      <div class="hero-bg-shapes" aria-hidden="true">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
+    <!-- HERO (kinetic typography) -->
+    <section class="stage hero" id="hero">
+      <p class="kicker reveal">Independent research collective</p>
+      <h1 class="sr-only">Questions medicine hasn't answered. We're closing them.</h1>
+      <div class="hero-foot">
+        <p class="hero-sub reveal">Physician-led evidence synthesis.</p>
+        <div class="hero-actions reveal" data-d="1">
+          <a href="#work" class="btn btn-ink">See the work</a>
+          <a href="#lead" class="btn btn-line">Lead a project</a>
+        </div>
       </div>
-      <div class="container hero-content">
-        <p class="hero-overline anim-fade-up">Independent Research Organization</p>
-        <h1 class="anim-fade-up anim-delay-1">Operation <span class="accent">MetaMind</span></h1>
-        <p class="hero-tagline anim-fade-up anim-delay-2">Advancing evidence-based medicine through rigorous Systematic Reviews, Meta-Analyses, and interdisciplinary clinical research.</p>
-        <div class="hero-actions anim-fade-up anim-delay-3">
-          <a href="#research" class="btn btn-primary">Explore Our Research</a>
-          <a href="#contact" class="btn btn-outline">Collaborate With Us</a>
+      <div class="scroll-hint reveal" data-d="2" aria-hidden="true"><span></span>Scroll</div>
+    </section>
+
+    <!-- MODEL (panel) -->
+    <section class="panel section" id="model">
+      <div class="wrap">
+        <div class="lead-row">
+          <span class="eyebrow reveal">The model</span>
+          <h2 class="display reveal">We train researchers, <span class="quiet">not just produce</span> research.</h2>
+        </div>
+        <div class="model-body">
+          <p class="para reveal">
+            Every member is taught to lead a study end to end, from protocol to
+            publication. Method, mentorship, and authorship are structured so that
+            capability compounds with each project.
+          </p>
+          <ul class="rules">
+            <li class="reveal"><h3>Method-led</h3><p>We develop and teach our own workflows for screening, appraisal, and synthesis.</p></li>
+            <li class="reveal" data-d="1"><h3>Authorship by contribution</h3><p>Order follows ICMJE and CRediT, determined by the work.</p></li>
+            <li class="reveal" data-d="2"><h3>Open by default</h3><p>Protocols are registered before analysis. Code and results are shared where permitted.</p></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section scroll-reveal">
-      <div class="container">
-        <h2 class="section-title">About Our Organization</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>Operation MetaMind is an independent research organization dedicated to producing high-quality evidence syntheses in clinical and health sciences. Our core expertise lies in conducting Systematic Reviews and Meta-Analyses (SRMA) that follow PRISMA guidelines and Cochrane methodology, contributing to the global body of evidence-based medical knowledge.</p>
-            <p>We bring together physicians, medical researchers, and trainees across multiple institutions, united by a commitment to methodological rigor, transparent research practices, and open science. Our structured task force model enables efficient collaboration across all phases of the systematic review process.</p>
-            <p>As an independent organization, we maintain formal data use agreements, ethical oversight standards, and security protocols required for accessing restricted research databases from agencies including the National Cancer Institute (NCI), SEER Program, dbGaP, and other national repositories.</p>
-          </div>
-          <div class="about-stats">
-            <div class="stat-card">
-              <span class="stat-number">11</span>
-              <span class="stat-label">Active Researchers</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">7</span>
-              <span class="stat-label">Task Forces</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">6</span>
-              <span class="stat-label">SRMA Phases</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Active Project</span>
-            </div>
-          </div>
+    <!-- BUILD (panel) -->
+    <section class="panel section section-tint" id="build">
+      <div class="wrap">
+        <div class="lead-row">
+          <span class="eyebrow reveal">What we build</span>
+          <h2 class="display reveal">Five lanes. Every project lives in one and borrows from the rest.</h2>
+        </div>
+        <div class="lanes">
+          <article class="lane reveal"><span class="lane-no">01</span><h3>Systematic Reviews &amp; Meta-Analyses</h3><p>Evidence synthesis to PRISMA, with GRADE certainty and trial sequential analysis where warranted.</p></article>
+          <article class="lane reveal" data-d="1"><span class="lane-no">02</span><h3>Database &amp; Registry Cohorts</h3><p>Retrospective population studies on SEER and national registries: survival, treatment trends, disparities.</p></article>
+          <article class="lane reveal" data-d="2"><span class="lane-no">03</span><h3>Decision &amp; Simulation Models</h3><p>Markov and cost-effectiveness models for questions a trial cannot answer.</p></article>
+          <article class="lane reveal"><span class="lane-no">04</span><h3>Case Studies &amp; Evidence Notes</h3><p>Structured synthesis where trial data will never exist.</p></article>
+          <article class="lane reveal" data-d="1"><span class="lane-no">05</span><h3>Methods &amp; Workflows</h3><p>Reproducible, AI-augmented pipelines, verified by hand.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- Research Focus -->
-    <section id="research" class="section section-alt scroll-reveal">
-      <div class="container">
-        <h2 class="section-title">Core Research Focus</h2>
-        <p class="section-subtitle">Our research program integrates clinical inquiry with modern evidence synthesis methodologies to address critical questions in health sciences.</p>
-        <div class="research-grid">
+    <!-- WORK (panel) -->
+    <section class="panel section" id="work">
+      <div class="wrap">
+        <div class="lead-row">
+          <span class="eyebrow reveal">The work</span>
+          <h2 class="display reveal">The questions we are closing.</h2>
+        </div>
 
-          <article class="research-card">
-            <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M12 24h24M18 16h12M15 32h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.3"/>
-              </svg>
-            </div>
-            <h3>Systematic Reviews &amp; Meta-Analyses</h3>
-            <p>Our primary methodology: comprehensive evidence synthesis following PRISMA 2020 guidelines and Cochrane protocols. We conduct rigorous searches, transparent screening, and quantitative pooling of clinical evidence.</p>
-          </article>
+        <div class="filters reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter" data-filter="srma" role="tab" aria-selected="false">Reviews &amp; Meta</button>
+          <button class="filter" data-filter="database" role="tab" aria-selected="false">Database</button>
+          <button class="filter" data-filter="model" role="tab" aria-selected="false">Decision Models</button>
+          <button class="filter" data-filter="methods" role="tab" aria-selected="false">Methods</button>
+        </div>
 
-          <article class="research-card">
-            <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M10 38V18l14-8 14 8v20" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M18 38V28h12v10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <circle cx="24" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <h3>Clinical Outcomes Research</h3>
-            <p>Comparative effectiveness studies evaluating surgical techniques, treatment modalities, and clinical interventions. We focus on patient-centered outcomes including survival, morbidity, and quality of life.</p>
-          </article>
-
-          <article class="research-card">
-            <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <ellipse cx="24" cy="24" rx="16" ry="8" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M24 16v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M16 20l16 8M32 20l-16 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-              </svg>
-            </div>
-            <h3>Esophageal Cancer Research</h3>
-            <p>Our inaugural project compares Robot-Assisted Minimally Invasive Esophagectomy (RAMIE) versus conventional Minimally Invasive Esophagectomy (MIE) through a comprehensive meta-analysis of clinical outcomes.</p>
-          </article>
-
-          <article class="research-card">
-            <div class="research-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="10" y="10" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M16 28l5-6 4 4 7-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="16" cy="18" r="2" fill="currentColor" opacity="0.3"/>
-              </svg>
-            </div>
-            <h3>Computational Research Methods</h3>
-            <p>Leveraging modern statistical tools (R, RevMan, JASP) for quantitative synthesis, risk of bias assessment (RoB 2), and advanced analytical frameworks for heterogeneity analysis and sensitivity testing.</p>
-          </article>
-
+        <div class="work" id="workGrid">
+          <article class="proj reveal" data-lane="srma"><div class="proj-meta"><span class="code">RAMIE</span><span class="dot" data-s="accepted">Accepted</span></div><h3>Is robotic esophagectomy actually better than the standard approach?</h3><p>A meta-analysis of surgical, oncological, and survival outcomes in robotic versus conventional minimally invasive esophagectomy.</p><p class="proj-note">ACS Clinical Congress 2026. Fast-tracked for JACS.</p></article>
+          <article class="proj reveal" data-lane="srma"><div class="proj-meta"><span class="code">VEMURAF</span><span class="dot" data-s="accepted">Accepted</span></div><h3>Does a BRAF inhibitor work in a leukemia too rare to run a trial on?</h3><p>A proportional meta-analysis of response and survival with vemurafenib in resistant hairy cell leukemia.</p><p class="proj-note">SOHO 2026. Registered on PROSPERO, in screening.</p></article>
+          <article class="proj reveal" data-lane="srma"><div class="proj-meta"><span class="code">CHIMNEY</span><span class="dot" data-s="progress">In development</span></div><h3>Does prophylactic mesh prevent parastomal hernia, or only delay it?</h3><p>A meta-analysis with trial sequential analysis, pooling long-term follow-up the guidelines were written without.</p><p class="proj-note">Research Hackathon 2026 finalist. Targeting ACS 2027.</p></article>
+          <article class="proj reveal" data-lane="database"><div class="proj-meta"><span class="code">Anl_CA</span><span class="dot" data-s="registered">Registered</span></div><h3>Has anal cancer treatment actually changed across three decades?</h3><p>A SEER population-based cohort of treatment trends and survival, 2000 to 2023.</p><p class="proj-note">Registered on OSF. Journal article in progress.</p></article>
+          <article class="proj reveal" data-lane="database"><div class="proj-meta"><span class="code">SEER</span><span class="dot" data-s="submitted">Submitted</span></div><h3>Does Commission on Cancer accreditation improve resection and survival in gastric cancer?</h3><p>A SEER population-based cohort of resectable gastric adenocarcinoma, accredited versus non-accredited centers.</p><p class="proj-note">Abstract submitted, ACS Clinical Congress 2026.</p></article>
+          <article class="proj reveal" data-lane="database"><div class="proj-meta"><span class="code">SEER</span><span class="dot" data-s="submitted">Submitted</span></div><h3>Does surgical staging erase the racial survival gap?</h3><p>A pan-cancer sentinel lymph node biopsy equity analysis using the new 2018+ SEER variables.</p><p class="proj-note">Abstract submitted, ACS Clinical Congress 2026.</p></article>
+          <article class="proj reveal" data-lane="database"><div class="proj-meta"><span class="code">SEER</span><span class="dot" data-s="submitted">Submitted</span></div><h3>Does resection beat non-operative management in oligometastatic colorectal cancer?</h3><p>A SEER 17 population-based cohort, 2010 to 2023, comparing surgical resection with non-operative management.</p><p class="proj-note">Abstract submitted, ACS Clinical Congress 2026.</p></article>
+          <article class="proj reveal" data-lane="model"><div class="proj-meta"><span class="code">MARKOV</span><span class="dot" data-s="progress">In development</span></div><h3>Is ctDNA-guided surveillance worth the cost in rectal cancer?</h3><p>A decision-analytic model of ctDNA-augmented watch-and-wait after total neoadjuvant therapy, built on an active surveillance trial.</p><p class="proj-note">In development.</p></article>
+          <article class="proj reveal" data-lane="model methods"><div class="proj-meta"><span class="code">DARTH</span><span class="dot" data-s="active">Active</span></div><h3>Decision-analytic modeling program</h3><p>The training track and idea engine behind our health-economic modeling in R.</p><p class="proj-note">Active.</p></article>
+          <article class="proj reveal" data-lane="srma"><div class="proj-meta"><span class="code">SPIRONO</span><span class="dot" data-s="registered">Registered</span></div><h3>Can spironolactone prevent a second intracranial bleed?</h3><p>A systematic review anchored on the ongoing trial, assembling the evidence that exists while the field waits for the rest.</p><p class="proj-note">Registered on PROSPERO. Draft manuscript ready.</p></article>
+          <article class="proj reveal" data-lane="srma"><div class="proj-meta"><span class="code">SRMA ODS</span><span class="dot" data-s="registered">Registered</span></div><h3>Plasma exchange or IVIG for osmotic demyelination syndrome?</h3><p>A systematic review of case reports and series for a syndrome no trial will study.</p><p class="proj-note">Registered on PROSPERO. Screening in progress.</p></article>
+          <article class="proj reveal" data-lane="database"><div class="proj-meta"><span class="code">MS-EDMS</span><span class="dot" data-s="progress">In preparation</span></div><h3>A novel neurosurgical technique in moyamoya disease</h3><p>A surgical technique write-up with original operative illustration.</p><p class="proj-note">Manuscript in preparation.</p></article>
+          <article class="proj reveal" data-lane="database"><div class="proj-meta"><span class="code">NCRP</span><span class="dot" data-s="progress">In development</span></div><h3>Population-based cancer registry cohort</h3><p>A retrospective cohort on Indian national registry data, via ICMR.</p><p class="proj-note">In development.</p></article>
+          <article class="proj reveal" data-lane="methods"><div class="proj-meta"><span class="code">RoBer | COP</span><span class="dot" data-s="accepted">Accepted</span></div><h3>A faster risk-of-bias workflow</h3><p>Our reproducible ROBINS-I and ROB2 pipeline, packaged as a method in its own right.</p><p class="proj-note">Cochrane Colloquium 2026. In active use.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- SRMA Methodology Workflow -->
-    <section id="methodology" class="section scroll-reveal">
-      <div class="container">
-        <h2 class="section-title">Our Methodology</h2>
-        <p class="section-subtitle">We follow a structured six-phase workflow for every systematic review, each managed by a dedicated task force.</p>
-        <div class="workflow">
-          <div class="workflow-step">
-            <div class="workflow-node">1</div>
-            <div class="workflow-label">Protocol<br><span>Design</span></div>
-          </div>
-          <div class="workflow-connector" aria-hidden="true"></div>
-          <div class="workflow-step">
-            <div class="workflow-node">2</div>
-            <div class="workflow-label">Literature<br><span>Search</span></div>
-          </div>
-          <div class="workflow-connector" aria-hidden="true"></div>
-          <div class="workflow-step">
-            <div class="workflow-node">3</div>
-            <div class="workflow-label">Screening &amp;<br><span>Eligibility</span></div>
-          </div>
-          <div class="workflow-connector" aria-hidden="true"></div>
-          <div class="workflow-step">
-            <div class="workflow-node">4</div>
-            <div class="workflow-label">Data<br><span>Extraction</span></div>
-          </div>
-          <div class="workflow-connector" aria-hidden="true"></div>
-          <div class="workflow-step">
-            <div class="workflow-node">5</div>
-            <div class="workflow-label">Analysis &amp;<br><span>Assessment</span></div>
-          </div>
-          <div class="workflow-connector" aria-hidden="true"></div>
-          <div class="workflow-step">
-            <div class="workflow-node">6</div>
-            <div class="workflow-label">Writing &amp;<br><span>Publication</span></div>
-          </div>
+    <!-- COLLABORATION (panel) -->
+    <section class="panel section section-tint" id="record">
+      <div class="wrap">
+        <div class="lead-row">
+          <span class="eyebrow reveal">Collaboration</span>
+          <h2 class="display reveal">A distributed collective, <span class="quiet">across leading institutions.</span></h2>
         </div>
+        <p class="para reveal">Our members and collaborators contribute from major academic centers on four continents, from medical students to fellows at top hospitals.</p>
+        <ul class="institutions reveal">
+          <li>Mayo Clinic</li>
+          <li>Stanford</li>
+          <li>Miami Cancer Institute</li>
+          <li>University of Central Florida</li>
+          <li>Osmania Medical College</li>
+          <li>Gandhi Medical College</li>
+        </ul>
+        <p class="record-foot reveal">Contributors span India, the United States, Turkey, Peru, and Mexico.</p>
       </div>
     </section>
 
-    <!-- Team -->
-    <section id="team" class="section section-alt scroll-reveal">
-      <div class="container">
-        <h2 class="section-title">Leadership &amp; Research Team</h2>
-        <p class="section-subtitle">Our multidisciplinary team of 11 researchers spans clinical medicine, data science, and research methodology.</p>
-        <div class="team-grid">
-
-          <article class="team-card team-card-lead">
-            <div class="team-avatar" data-initials="AN">AN</div>
-            <h3>Dr Ayman Nadeem</h3>
-            <p class="team-degree">MBBS</p>
-            <p class="team-role">Principal Investigator &amp; Director</p>
-            <span class="team-badge">Commander</span>
-            <p class="team-bio">Founder and PI of Operation MetaMind. Oversees all task forces, sets strategic direction, and maintains methodological rigor across SRMA projects. Responsible for protocol design, cross-team coordination, and compliance.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="AA">AA</div>
-            <h3>Dr Ahmed Aquib Ali</h3>
-            <p class="team-degree">MBBS</p>
-            <p class="team-role">Senior Researcher</p>
-            <span class="team-badge">General</span>
-            <p class="team-bio">Senior research team member with expertise in clinical research methodology and evidence synthesis.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="MM">MM</div>
-            <h3>Dr Mohammed Merajuddin</h3>
-            <p class="team-degree">MBBS</p>
-            <p class="team-role">Senior Researcher</p>
-            <span class="team-badge">General</span>
-            <p class="team-bio">Senior research team member contributing to data analysis, quality assessment, and manuscript preparation.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="KA">KA</div>
-            <h3>Dr Krishna Saketh Athmakuri</h3>
-            <p class="team-degree">MBBS</p>
-            <p class="team-role">Research Associate</p>
-            <span class="team-badge">Officer</span>
-            <p class="team-bio">Research associate specializing in systematic search strategies and screening procedures.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="ST">ST</div>
-            <h3>Dr Sumaiya Tarannum Shaik</h3>
-            <p class="team-degree">MBBS</p>
-            <p class="team-role">Research Associate</p>
-            <span class="team-badge">Officer</span>
-            <p class="team-bio">Research associate contributing to data extraction, eligibility screening, and quality assessment.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="MN">MN</div>
-            <h3>Dr Manasi Narreddy</h3>
-            <p class="team-degree">MBBS</p>
-            <p class="team-role">Research Associate</p>
-            <span class="team-badge">Officer</span>
-            <p class="team-bio">Research associate engaged in literature search, screening, and evidence synthesis workflows.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="SG">SG</div>
-            <h3>Sravan Reddy Ganta</h3>
-            <p class="team-degree">MS4</p>
-            <p class="team-role">Research Associate</p>
-            <span class="team-badge">Officer</span>
-            <p class="team-bio">Fourth-year medical student contributing to data extraction and analytical components of ongoing studies.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="SB">SB</div>
-            <h3>Saieesh Bairam</h3>
-            <p class="team-degree">MS4</p>
-            <p class="team-role">Research Associate</p>
-            <span class="team-badge">Officer</span>
-            <p class="team-bio">Fourth-year medical student supporting screening, data extraction, and writing task forces.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="FS">FS</div>
-            <h3>Faizaan Mohammed Shareef</h3>
-            <p class="team-degree">MS3</p>
-            <p class="team-role">Research Assistant</p>
-            <span class="team-badge">Troop</span>
-            <p class="team-bio">Third-year medical student assisting with literature search and screening workflows.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="YA">YA</div>
-            <h3>Yousuf</h3>
-            <p class="team-role">Research Assistant</p>
-            <span class="team-badge">Troop</span>
-            <p class="team-bio">Research assistant supporting screening and data collection activities.</p>
-          </article>
-
-          <article class="team-card">
-            <div class="team-avatar" data-initials="MU">MU</div>
-            <h3>Mustafa</h3>
-            <p class="team-role">Research Assistant</p>
-            <span class="team-badge">Troop</span>
-            <p class="team-bio">Research assistant contributing to literature search and screening phases.</p>
-          </article>
-
+    <!-- METHOD (panel) -->
+    <section class="panel section" id="run">
+      <div class="wrap">
+        <div class="lead-row">
+          <span class="eyebrow reveal">Method</span>
+          <h2 class="display reveal">One standard, every project.</h2>
         </div>
+        <p class="para reveal">
+          Pre-registered before analysis. Searched systematically, screened in duplicate
+          and blinded, appraised for risk of bias, and reported to PRISMA or the relevant
+          guideline. Leads own their projects; the collective safeguards the method.
+        </p>
+        <ul class="standard reveal">
+          <li>PROSPERO</li><li>PRISMA</li><li>ROBINS-I</li><li>ROB2</li><li>GRADE</li><li>CRediT</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Data Governance & Ethics -->
-    <section id="governance" class="section scroll-reveal">
-      <div class="container">
-        <h2 class="section-title">Data Governance &amp; Research Ethics</h2>
-        <div class="governance-grid">
-          <div class="governance-text">
-            <p>Operation MetaMind is committed to the highest standards of responsible research conduct and data stewardship. We adhere to all applicable data use agreements, institutional review requirements, and ethical guidelines governing the use of sensitive research data.</p>
-          </div>
-          <div class="governance-cards">
-            <div class="governance-card">
-              <h3>Data Use Agreements</h3>
-              <p>All research involving restricted or controlled-access datasets is conducted under formally executed data use agreements. Our researchers are trained in the terms, conditions, and security requirements specific to each dataset.</p>
-            </div>
-            <div class="governance-card">
-              <h3>Ethical Oversight</h3>
-              <p>Research protocols involving human subjects data are reviewed through appropriate ethical oversight mechanisms. We maintain documentation of all approvals, exemptions, and compliance certifications.</p>
-            </div>
-            <div class="governance-card">
-              <h3>Data Security</h3>
-              <p>We implement rigorous technical and administrative safeguards to protect the confidentiality and integrity of research data, consistent with NIST and institutional security frameworks.</p>
-            </div>
-            <div class="governance-card">
-              <h3>Reproducibility &amp; Open Science</h3>
-              <p>We are committed to transparent and reproducible research. Code, methodologies, and non-restricted results are shared through public repositories and peer-reviewed publications.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section section-alt scroll-reveal">
-      <div class="container">
-        <h2 class="section-title">Active Projects</h2>
-        <p class="section-subtitle">Current and upcoming research initiatives from our team.</p>
-        <div class="pub-list">
-
-          <article class="pub-item">
-            <div class="pub-status-bar"></div>
-            <div class="pub-content">
-              <div class="pub-header">
-                <span class="pub-badge pub-badge-active">In Progress</span>
-                <span class="pub-year">2026</span>
-              </div>
-              <h3>RAMIE vs MIE for Esophageal Cancer: A Systematic Review and Meta-Analysis</h3>
-              <p class="pub-authors">Nadeem A, Ali AA, Merajuddin M, Athmakuri KS, Shaik ST, Narreddy M, et al.</p>
-              <p class="pub-venue">Systematic Review &amp; Meta-Analysis (PROSPERO registration pending)</p>
-              <p class="pub-description">A comprehensive comparison of Robot-Assisted Minimally Invasive Esophagectomy (RAMIE) versus conventional Minimally Invasive Esophagectomy (MIE), evaluating surgical outcomes, perioperative morbidity, oncological adequacy, and long-term survival.</p>
-              <div class="pub-links">
-                <a href="https://github.com/Operation-MetaMind" target="_blank" rel="noopener noreferrer">Protocol</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section scroll-reveal">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Get in Touch</h3>
-            <p>We welcome inquiries from researchers, institutions, and organizations interested in collaboration, data sharing, or joining our research programs.</p>
-            <ul class="contact-list">
-              <li>
-                <span class="contact-label">General Inquiries</span>
-                <a href="mailto:contact@operationmetamind.eu.org">contact@operationmetamind.eu.org</a>
-              </li>
-              <li>
-                <span class="contact-label">Research &amp; Data Access</span>
-                <a href="mailto:research@operationmetamind.eu.org">research@operationmetamind.eu.org</a>
-              </li>
-              <li>
-                <span class="contact-label">Administration</span>
-                <a href="mailto:admin@operationmetamind.eu.org">admin@operationmetamind.eu.org</a>
-              </li>
-            </ul>
-          </div>
-          <div class="contact-links">
-            <h3>Find Us Online</h3>
-            <ul class="contact-list">
-              <li>
-                <span class="contact-label">GitHub</span>
-                <a href="https://github.com/Operation-MetaMind" target="_blank" rel="noopener noreferrer">github.com/Operation-MetaMind</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <!-- LEAD -->
+    <section class="panel section section-lead" id="lead">
+      <div class="wrap lead-inner reveal">
+        <span class="eyebrow">Collaborate</span>
+        <h2 class="display">Lead your own review.</h2>
+        <p class="para">We look for people who want to run a project, not sit on one. Bring a question worth answering and the will to drive it. We supply the method, the supervision, and the team to close it.</p>
+        <a href="mailto:maazayman@gmail.com" class="btn btn-ink btn-lg">Start a conversation</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="footer-logo">Operation<span class="accent">MetaMind</span></span>
-          <p>Independent Research Organization</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#team">Team</a>
-          <a href="#governance">Governance</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <span class="brand">Operation MetaMind</span>
+        <p>Independent research collective. Physician-led. Method-driven.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Operation MetaMind. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="mailto:maazayman@gmail.com">maazayman@gmail.com</a>
+        <a href="https://github.com/Operation-MetaMind" target="_blank" rel="noopener noreferrer">github.com/Operation-MetaMind</a>
       </div>
     </div>
+    <div class="wrap footer-base"><p>&copy; 2026 Operation MetaMind</p></div>
   </footer>
 
+  <script type="module" src="js/scene.js?v=7"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>
