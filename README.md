@@ -7,7 +7,6 @@ Official website for Operation MetaMind, an independent, physician-led research 
 - Static HTML5 and CSS3 with vanilla JavaScript, no build step
 - three.js (via CDN) for the kinetic-typography hero
 - Hosted on GitHub Pages
-- DNS via Cloudflare, email routing via Cloudflare Email Routing
 
 ## Local development
 

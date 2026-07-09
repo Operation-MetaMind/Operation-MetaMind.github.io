@@ -6,11 +6,11 @@
   <meta name="description" content="Operation MetaMind is an independent, physician-led research collective. We answer the questions medicine has not: systematic reviews, meta-analyses, database cohorts, and decision models.">
   <meta name="theme-color" content="#f3f1ec">
   <title>Operation MetaMind | Physician-led evidence synthesis</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2314151a'/><circle cx='16' cy='16' r='8' fill='none' stroke='%23c9b8ff' stroke-width='1.4'/><circle cx='16' cy='16' r='3' fill='%237c9cff'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316171c'/%3E%3Cpath d='M16 5.5a8 8 0 0 1 8 8c0 2.9-1.6 4.5-2.9 5.9-.7.8-1.2 1.6-1.3 2.8h-7.6c-.1-1.2-.6-2-1.3-2.8-1.3-1.4-2.9-3-2.9-5.9a8 8 0 0 1 8-8Z' stroke='%23f3f1ec' stroke-width='1.5' fill='none'/%3E%3Cpath d='M13.2 24.8h5.6M13.8 27h4.4' stroke='%23f3f1ec' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M13.6 20v-2.8l1.6 1.6.8-2.2.8 2.2 1.6-1.6V20' stroke='%238f9dff' stroke-width='1.3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=8">
   <meta property="og:title" content="Operation MetaMind">
   <meta property="og:description" content="Physician-led evidence synthesis. Independent research collective.">
   <meta property="og:type" content="website">
@@ -26,6 +26,7 @@
 </head>
 <body>
 
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <a href="#work" class="skip-link">Skip to content</a>
 
   <!-- Fixed WebGL stage, sits behind everything -->
@@ -35,7 +36,11 @@
   <header class="header" id="header">
     <div class="wrap header-inner">
       <a href="#top" class="brand">
-        <span class="brand-dot" aria-hidden="true"></span>
+        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 3.5a9.5 9.5 0 0 1 9.5 9.5c0 3.4-1.9 5.3-3.4 7-.9 1-1.5 2-1.6 3.5h-9c-.1-1.5-.7-2.5-1.6-3.5-1.5-1.7-3.4-3.6-3.4-7A9.5 9.5 0 0 1 16 3.5Z" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M12.5 26.5h7M13.2 29h5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M13 21v-3.4l1.9 2 1.1-2.8 1.1 2.8 1.9-2V21" stroke="#4b46e5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         Operation MetaMind
       </a>
       <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
@@ -45,6 +50,7 @@
         <a href="#build">Work</a>
         <a href="#work">Projects</a>
         <a href="#record">Collaboration</a>
+        <a href="team.html">Team</a>
         <a href="#lead" class="nav-cta">Lead a project</a>
       </nav>
     </div>
@@ -54,7 +60,7 @@
 
     <!-- HERO (kinetic typography) -->
     <section class="stage hero" id="hero">
-      <p class="kicker reveal">Independent research collective</p>
+      <p class="kicker reveal">International research collective</p>
       <h1 class="sr-only">Questions medicine hasn't answered. We're closing them.</h1>
       <div class="hero-foot">
         <p class="hero-sub reveal">Physician-led evidence synthesis.</p>
@@ -62,15 +68,15 @@
           <a href="#work" class="btn btn-ink">See the work</a>
           <a href="#lead" class="btn btn-line">Lead a project</a>
         </div>
+        <div class="scroll-hint reveal" data-d="2" aria-hidden="true">Scroll<span></span></div>
       </div>
-      <div class="scroll-hint reveal" data-d="2" aria-hidden="true"><span></span>Scroll</div>
     </section>
 
     <!-- MODEL (panel) -->
     <section class="panel section" id="model">
       <div class="wrap">
         <div class="lead-row">
-          <span class="eyebrow reveal">The model</span>
+          <span class="eyebrow reveal"><i>01</i>The model</span>
           <h2 class="display reveal">We train researchers, <span class="quiet">not just produce</span> research.</h2>
         </div>
         <div class="model-body">
@@ -92,7 +98,7 @@
     <section class="panel section section-tint" id="build">
       <div class="wrap">
         <div class="lead-row">
-          <span class="eyebrow reveal">What we build</span>
+          <span class="eyebrow reveal"><i>02</i>What we build</span>
           <h2 class="display reveal">Five lanes. Every project lives in one and borrows from the rest.</h2>
         </div>
         <div class="lanes">
@@ -105,11 +111,19 @@
       </div>
     </section>
 
+    <!-- Codename marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>RAMIE &middot; VEMURAF &middot; CHIMNEY &middot; ANL_CA &middot; SEER &middot; MARKOV &middot; DARTH &middot; SPIRONO &middot; SRMA ODS &middot; MS-EDMS &middot; NCRP &middot; RoBer | COP &middot;&nbsp;</span>
+        <span>RAMIE &middot; VEMURAF &middot; CHIMNEY &middot; ANL_CA &middot; SEER &middot; MARKOV &middot; DARTH &middot; SPIRONO &middot; SRMA ODS &middot; MS-EDMS &middot; NCRP &middot; RoBer | COP &middot;&nbsp;</span>
+      </div>
+    </div>
+
     <!-- WORK (panel) -->
     <section class="panel section" id="work">
       <div class="wrap">
         <div class="lead-row">
-          <span class="eyebrow reveal">The work</span>
+          <span class="eyebrow reveal"><i>03</i>The work</span>
           <h2 class="display reveal">The questions we are closing.</h2>
         </div>
 
@@ -144,46 +158,19 @@
     <section class="panel section section-tint" id="record">
       <div class="wrap">
         <div class="lead-row">
-          <span class="eyebrow reveal">Collaboration</span>
+          <span class="eyebrow reveal"><i>04</i>Collaboration</span>
           <h2 class="display reveal">A distributed collective, <span class="quiet">across leading institutions.</span></h2>
         </div>
-        <p class="para reveal">Our members and collaborators contribute from major academic centers on four continents, from medical students to fellows at top hospitals.</p>
-        <ul class="institutions reveal">
-          <li>Mayo Clinic</li>
-          <li>Stanford</li>
-          <li>Miami Cancer Institute</li>
-          <li>University of Central Florida</li>
-          <li>Osmania Medical College</li>
-          <li>Gandhi Medical College</li>
-        </ul>
-        <p class="record-foot reveal">Contributors span India, the United States, Turkey, Peru, and Mexico.</p>
-      </div>
-    </section>
-
-    <!-- METHOD (panel) -->
-    <section class="panel section" id="run">
-      <div class="wrap">
-        <div class="lead-row">
-          <span class="eyebrow reveal">Method</span>
-          <h2 class="display reveal">One standard, every project.</h2>
-        </div>
-        <p class="para reveal">
-          Pre-registered before analysis. Searched systematically, screened in duplicate
-          and blinded, appraised for risk of bias, and reported to PRISMA or the relevant
-          guideline. Leads own their projects; the collective safeguards the method.
-        </p>
-        <ul class="standard reveal">
-          <li>PROSPERO</li><li>PRISMA</li><li>ROBINS-I</li><li>ROB2</li><li>GRADE</li><li>CRediT</li>
-        </ul>
+        <p class="para reveal">Our members and collaborators work from major academic centers across four continents, from medical students to hospital fellows.</p>
       </div>
     </section>
 
     <!-- LEAD -->
     <section class="panel section section-lead" id="lead">
       <div class="wrap lead-inner reveal">
-        <span class="eyebrow">Collaborate</span>
+        <span class="eyebrow"><i>05</i>Collaborate</span>
         <h2 class="display">Lead your own review.</h2>
-        <p class="para">We look for people who want to run a project, not sit on one. Bring a question worth answering and the will to drive it. We supply the method, the supervision, and the team to close it.</p>
+        <p class="para">We look for people who want to run a project, not sit on one. Develop a question worth answering and the will to drive it. We supply the method, the supervision, and the team to close it.</p>
         <a href="mailto:maazayman@gmail.com" class="btn btn-ink btn-lg">Start a conversation</a>
       </div>
     </section>
@@ -193,8 +180,15 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <div>
-        <span class="brand">Operation MetaMind</span>
-        <p>Independent research collective. Physician-led. Method-driven.</p>
+        <span class="brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 3.5a9.5 9.5 0 0 1 9.5 9.5c0 3.4-1.9 5.3-3.4 7-.9 1-1.5 2-1.6 3.5h-9c-.1-1.5-.7-2.5-1.6-3.5-1.5-1.7-3.4-3.6-3.4-7A9.5 9.5 0 0 1 16 3.5Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12.5 26.5h7M13.2 29h5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M13 21v-3.4l1.9 2 1.1-2.8 1.1 2.8 1.9-2V21" stroke="#8f9dff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Operation MetaMind
+        </span>
+        <p>International research collective. Physician-led. Method-driven.</p>
       </div>
       <div class="footer-links">
         <a href="mailto:maazayman@gmail.com">maazayman@gmail.com</a>
@@ -202,9 +196,10 @@
       </div>
     </div>
     <div class="wrap footer-base"><p>&copy; 2026 Operation MetaMind</p></div>
+    <div class="footer-mark" aria-hidden="true">Operation MetaMind</div>
   </footer>
 
-  <script type="module" src="js/scene.js?v=7"></script>
-  <script src="js/main.js?v=2"></script>
+  <script type="module" src="js/scene.js?v=8"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

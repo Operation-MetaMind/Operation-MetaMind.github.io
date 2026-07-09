@@ -125,6 +125,11 @@ function init() {
     requestAnimationFrame(tick);
     const t = performance.now() * 0.001;
 
+    // Scroll dissolve: as the hero scrolls away, the type disperses and fades
+    // instead of merely sliding off screen.
+    const sc = Math.min(Math.max(window.scrollY / (vh * 0.85), 0), 1);
+    mat.opacity = Math.max(1 - sc * 1.15, 0);
+
     for (let i = 0; i < N; i++) {
       const i3 = i * 3;
       let dx = tgt[i3], dy = tgt[i3 + 1];
@@ -136,6 +141,11 @@ function init() {
       // gentle idle sway so the type breathes
       dx += Math.sin(t * 0.8 + seed[i]) * 1.1;
       dy += Math.cos(t * 0.7 + seed[i] * 1.3) * 1.1;
+      // scatter with scroll
+      if (sc > 0) {
+        dx += Math.cos(seed[i] * 3.7) * sc * 190;
+        dy += Math.sin(seed[i] * 2.9) * sc * 190 + sc * 55;
+      }
       // cursor repel
       if (pointer.on) {
         const rx = cur[i3] - pointer.x, ry = cur[i3 + 1] - pointer.y;

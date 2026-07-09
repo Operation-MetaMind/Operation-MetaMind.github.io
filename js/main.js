@@ -6,11 +6,17 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- Header background on scroll ----
+  // ---- Header background + reading progress on scroll ----
   var header = document.getElementById('header');
+  var progress = document.getElementById('progress');
   function onScroll() {
     if (window.scrollY > 20) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
+    if (progress) {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      progress.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + '%';
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -35,11 +41,31 @@
       });
     }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
     reveals.forEach(function (el) { revealObs.observe(el); });
+
+    // Backstop: reveal styling must never leave content hidden. If the
+    // observer fails to fire (embedded webviews, odd viewports), reveal
+    // whatever is actually in the viewport on a timer and on scroll.
+    var backstopTick = null;
+    function revealVisible() {
+      backstopTick = null;
+      var vh = window.innerHeight;
+      document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < vh * 0.96 && r.bottom > 0) el.classList.add('in');
+      });
+    }
+    function queueBackstop() {
+      if (!backstopTick) backstopTick = requestAnimationFrame(revealVisible);
+    }
+    setTimeout(revealVisible, 800);
+    window.addEventListener('scroll', queueBackstop, { passive: true });
+    window.addEventListener('resize', queueBackstop, { passive: true });
   }
 
-  // ---- Project filter ----
+  // ---- Project filter (crossfade the grid while cards swap) ----
   var filters = document.querySelectorAll('.filter');
   var projects = document.querySelectorAll('#workGrid .proj');
+  var workGrid = document.getElementById('workGrid');
   filters.forEach(function (btn) {
     btn.addEventListener('click', function () {
       var lane = btn.getAttribute('data-filter');
@@ -48,11 +74,22 @@
         f.classList.toggle('is-active', active);
         f.setAttribute('aria-selected', active ? 'true' : 'false');
       });
-      projects.forEach(function (card) {
-        var lanes = (card.getAttribute('data-lane') || '').split(' ');
-        var show = lane === 'all' || lanes.indexOf(lane) !== -1;
-        card.classList.toggle('is-hidden', !show);
-      });
+      function apply() {
+        projects.forEach(function (card) {
+          var lanes = (card.getAttribute('data-lane') || '').split(' ');
+          var show = lane === 'all' || lanes.indexOf(lane) !== -1;
+          card.classList.toggle('is-hidden', !show);
+        });
+      }
+      if (workGrid && !reduceMotion) {
+        workGrid.classList.add('is-filtering');
+        setTimeout(function () {
+          apply();
+          workGrid.classList.remove('is-filtering');
+        }, 180);
+      } else {
+        apply();
+      }
     });
   });
 
